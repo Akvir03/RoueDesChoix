@@ -12,11 +12,13 @@ La Roue des Choix est une application web interactive qui permet aux utilisateur
 ## Technologies Utilisées
 
 - **Front-end :** TypeScript, HTML, CSS
-- **Back-end :** À déterminer
+- **Back-end :** Node.Js
+- **Base de donnée :** PostegreSQL
 
 ## Prérequis
 
 Avant de commencer, assurez-vous d'avoir installé Node.js sur votre système, car il est nécessaire pour le développement du front-end en TypeScript.
+Le back-end sera lui aussi en Node.js.
 
 ## Installation
 
@@ -38,7 +40,7 @@ npm install
 Pour le back-end :
 
 ```bash
-
+npm install
 ```
 
 ## Lancement de l'Application
@@ -51,7 +53,7 @@ npm run start
 
 Pour le back-end:
 ```bash
-//////
+npm run start
 ```
 
 ## L'équipe:
