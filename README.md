@@ -56,7 +56,7 @@ Pour le back-end:
 
 ## L'équipe:
 
-Product Owner & Dev : DEVIENNE Nathan
-Scrum Master & Dev : HURDEBOURCQ Paul
-Lead Dev front-end : MASSIAS Théo
-Lead Dev back-end : AMZIL Marwane
+- Product Owner & Dev : DEVIENNE Nathan
+- Scrum Master & Dev : HURDEBOURCQ Paul
+- Lead Dev front-end : MASSIAS Théo
+- Lead Dev back-end : AMZIL Marwane
