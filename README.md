@@ -58,7 +58,7 @@ npm run start
 
 ## L'équipe:
 
-- Product Owner & Dev : DEVIENNE Nathan
+- Product Owner & Analyste Dev : DEVIENNE Nathan
 - Scrum Master & Dev : HURDEBOURCQ Paul
 - Lead Dev front-end : MASSIAS Théo
 - Lead Dev back-end : AMZIL Marwane
