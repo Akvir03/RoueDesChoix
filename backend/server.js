@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(bodyParser.json());
 
@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 // Route register
-app.post('/register', (req, res) => {
+app.get('/register', (req, res) => {
     const { username } = req.body;
     console.log(`Reçu: ${username}`);
     //Ici faire les requête BDD
@@ -22,7 +22,7 @@ app.post('/register', (req, res) => {
     res.json({ message: "True or False" });
 });
 // Route pour le login
-app.post('/login', (req, res) => {
+app.get('/login', (req, res) => {
     const { username } = req.body;
     console.log(`Login attempt with username: ${username}`);
     //Ici faire la requête à la base de donnée des users. Si trouvé return TRUE sinon FALSE
@@ -43,7 +43,7 @@ app.post('/wheelregister', (req, res) => {
 });
 
 // Route dernière roue utilisée
-app.post('/lastwheel', (req, res) => {
+app.get('/lastwheel', (req, res) => {
     const { username, id1, id2, id3, id4, id5, id6, id7, id8 } = req.body;
     console.log(`Reçu: ${req.body}`);
     //Ici faire les requête BDD
@@ -52,6 +52,7 @@ app.post('/lastwheel', (req, res) => {
     // Sinon, return une roue vide.
     res.json({ message: `dernière roue ${wheelID}` });
 });
+//Potentiel : Route retournant la liste de toutes les routes de l'utilisateur
 // Démarrage du serveur
 app.listen(port, () => {
     console.log(`Serveur démarré sur http://localhost:${port}`);
