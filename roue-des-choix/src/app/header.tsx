@@ -2,7 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import styles from './styles/Navbar.module.css'; // Import CSS module
+import styles from './styles/Navbar.module.css';
+import Image from 'next/image';
+import logoImage from './img/logo_trop_stylax.png';
 
 const Header: React.FC = () => {
   return (
@@ -10,14 +12,10 @@ const Header: React.FC = () => {
       <nav>
         <ul>
           <li>
-            <Link href="/">
-              Home
-            </Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/login">
-              Login
-            </Link>
+            <Link href="/login">Login</Link>
           </li>
           {/* Add more navigation links as needed */}
         </ul>

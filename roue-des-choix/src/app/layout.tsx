@@ -15,9 +15,9 @@ export default function RootLayout({
         <title>La Roue des Choix !</title>
       </head>
       <body>
-        <Header />
+      <Header />
         {children}
-        <Footer />
+      <Footer />
       </body>
     </html>
   );

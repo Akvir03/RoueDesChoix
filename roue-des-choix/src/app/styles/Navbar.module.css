@@ -2,7 +2,13 @@
 
 .navbar {
     background-color: #333;
-    padding: 10px;
+    padding: 20px;
+    border: 0px;
+    width:100%;
+    margin-left: -8px;
+    margin-top: -8px;
+    text-align: center;
+    background-color: #CAEEFB;
   }
   
   .navbar ul {
@@ -14,6 +20,11 @@
   .navbar li {
     display: inline-block;
     margin-right: 15px;
+    background-color: #E97132;
+    padding: 10px;
+    border: 2px solid #000;
+    /* change text color to black */
+    color: #000;
   }
   
   .navbar a {
