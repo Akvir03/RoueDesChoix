@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wheel Spin Game</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .container {
+      padding-top: 50px;
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .wheel-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .wheel {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      position: relative;
+      margin: 20px auto;
+      background-image: conic-gradient(grey);
+      background-size: 100% 100%;
+      background-clip: border-box;
+      background-origin: border-box;
+      border: 16px solid transparent;
+      /* Ajustez l'épaisseur de la bordure ici */
+    }
+
+    .wheel-inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #f4f4f4;
+      /* Couleur de fond de la page */
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .arrow {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 20px solid black;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-bottom: 5px;
+      transform: translateX(-50%);
+    }
+
+    .btn-spin {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .legend div {
+      text-align: center;
+      margin: 0 10px;
+    }
+
+    .legend .color-box {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .input-container {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar" style="display: flex; justify-content: center; align-items: center;">
+    <div>
+      <a href="#Accueil">Accueil</a>
+    </div>
+    <div style="flex-grow: 1; text-align: center;">
+      <a href="#BestRoues">Best Roues</a>
+      <a href="#MesRoues">Mes Roues</a>
+    </div>
+    <div>
+      <a href="#Login" style="margin-left: auto;">Login</a>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <h1>Spin the Wheel!</h1>
+    <div class="input-container">
+      <input type="text" id="restaurant1" placeholder="Restaurant 1">
+      <input type="text" id="restaurant2" placeholder="Restaurant 2">
+      <input type="text" id="restaurant3" placeholder="Restaurant 3">
+      <input type="text" id="restaurant4" placeholder="Restaurant 4">
+      <input type="text" id="restaurant5" placeholder="Restaurant 5">
+      <input type="text" id="restaurant6" placeholder="Restaurant 6">
+      <input type="text" id="restaurant7" placeholder="Restaurant 7">
+      <input type="text" id="restaurant8" placeholder="Restaurant 8">
+      <button id="submitBtn" class="btn-spin">Submit</button>
+    </div>
+    <div class="wheel-container">
+      <div class="arrow"></div>
+      <div id="wheel" class="wheel"></div>
+    </div>
+    <button id="spinBtn" class="btn-spin">Spin</button>
+
+    <div id="legend" class="legend"></div>
+  </div>
+
+  <script>
+    document.getElementById('submitBtn').onclick = function () {
+      const colors = ["red", "green", "blue", "purple", "orange", "yellow", "pink", "cyan"];
+      let restaurants = [];
+      for (let i = 1; i <= 8; i++) {
+        let restaurantName = document.getElementById('restaurant' + i).value.trim();
+        if (restaurantName) {
+          restaurants.push({ name: restaurantName, color: colors[i - 1] });
+        }
+      }
+
+      const wheel = document.getElementById('wheel');
+      if (restaurants.length > 0) {
+        let angle = 360 / restaurants.length;
+        let gradientArray = [];
+        for (let i = 0; i < restaurants.length; i++) {
+          gradientArray.push(`${restaurants[i].color} ${angle * i}deg ${angle * (i + 1)}deg`);
+        }
+
+        // Appliquer le gradient conique à la bordure de la roue
+        wheel.style.backgroundImage = `conic-gradient(${gradientArray.join(', ')})`;
+        wheel.style.border = '16px solid transparent'; // Pour maintenir la taille de la roue
+      } else {
+        wheel.style.backgroundImage = 'none';
+      }
+
+      document.getElementById('legend').innerHTML = restaurants.map(restaurant => {
+        return `<div><span class="color-box" style="background-color: ${restaurant.color};"></span>${restaurant.name}</div>`;
+      }).join('');
+
+      document.getElementById('spinBtn').style.display = 'block';
+    };
+
+    document.getElementById('spinBtn').onclick = function () {
+      var wheel = document.getElementById('wheel');
+      var degree = Math.floor(5000 + Math.random() * 5000);
+      var spins = "rotate(" + degree + "deg)";
+      wheel.style.transition = "transform 4s ease-out";
+      wheel.style.transform = spins;
+    }
+  </script>
+
+</body>
+
+</html>
