@@ -3,8 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './styles/Navbar.module.css';
-import Image from 'next/image';
-import logoImage from './img/logo_trop_stylax.png';
 
 const Header: React.FC = () => {
   return (

@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <p>&copy; {new Date().getFullYear()} -8px All rights reserved.</p>
-      <Image src={logo} alt={''} width={50} height={50}/>
+      <Image src={logo} alt={''} width={50} height={50} className={styles.couscousAuChocolat}/>
       {/* Add any other footer content or credits here */}
     </footer>
   );
