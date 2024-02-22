@@ -10,15 +10,19 @@ const Header: React.FC = () => {
       <nav>
         <ul>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/">Accueil</Link>
           </li>
           <li>
-            <Link href="/login">Login</Link>
+            <Link href="/connection">Connection</Link>
           </li>
-          {/* Add more navigation links as needed */}
+          <li>
+            <Link href="/mesroues">Mes Roues</Link>
+          </li>
+          <li>
+            <Link href="/meilleursroues">Meilleurs roues</Link>
+          </li>
         </ul>
       </nav>
-      {/* Add any other header content or styles here */}
     </header>
   );
 };
