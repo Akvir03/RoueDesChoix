@@ -1,16 +1,12 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
 const User = require('./models/userModel');
-const Theme = require('./models/themeModel');
-const Word = require('./models/wordModel');
 // const Connection = require('./models/connectionModel');
 const{ decryptField} = require('./controllers/functionNeeded');
 const secretKey = Buffer.from(process.env.SECRET_KEY, 'hex');
 
 const userController = require('./controllers/userController');
-const connectionController = require('./controllers/connectionController');  
-const themeController = require('./controllers/restaurantController');  
-const wordController = require('./controllers/wordController');  
+const themeController = require('./controllers/restaurantController');
 
 require('dotenv').config();
 
@@ -43,16 +39,6 @@ async function createUsers() {
   }
 
 
-}
-
-async function createThemes() {
-  const themes = Array.from({ length: NUM_THEMES }).map(() => ({
-    theme_name: faker.random.word()
-  }));
-
-  for(let theme of themes){
-    await themeController.makeTheme(theme);
-  }
 }
 
 async function generateData() {

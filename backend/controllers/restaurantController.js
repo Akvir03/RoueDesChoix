@@ -13,13 +13,12 @@ const BASE_ERROR = "BACK ERROR"
 const RestaurantController = {
   // Créer un nouveau restaurant
   createRestaurant: async (req, res) => {
-    const { name, cuisine, address, rating } = req.body;
+    const { name, cuisine, address } = req.body;
     try {
       const newRestaurant = new Restaurant({
         name,
         cuisine,
         address,
-        rating,
         added_by: req.user.id, // Assurez-vous d'avoir une manière d'identifier l'utilisateur, par exemple via l'authentification
       });
       const savedRestaurant = await newRestaurant.save();
@@ -30,13 +29,12 @@ const RestaurantController = {
   },
 
   createRestaurantJSON: async(restaurantData) => {
-    const { name, cuisine, address, rating, added_by, approved } = restaurantData;
+    const { name, cuisine, address, added_by, approved } = restaurantData;
     try {
       const newRestaurant = new Restaurant({
         name,
         cuisine,
         address,
-        rating,
         added_by,
         approved
       });

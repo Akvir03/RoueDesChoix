@@ -43,7 +43,6 @@ async function createRestaurants(NUM_RESTAURANTS) {
     name: faker.company.companyName(),
     cuisine: faker.commerce.productMaterial(),
     address: faker.address.streetAddress(),
-    rating: Math.floor(Math.random() * 5) + 1, // Génère un nombre aléatoire entre 1 et 5
     added_by: "System",
     approved: true
   }));

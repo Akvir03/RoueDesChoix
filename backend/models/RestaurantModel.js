@@ -19,11 +19,6 @@ const RestaurantSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  rating: {
-    type: Number,
-    required: false,
-    default: 0
-  },
   reviews: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Review'
