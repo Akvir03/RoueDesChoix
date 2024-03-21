@@ -1,7 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const cors = require('cors');
 const app = express();
+
+app.use(cors()); // This will enable CORS for all routes
 const port = 3001;
 const { MongoClient } = require('mongodb');
 const uri = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.1";
@@ -91,7 +94,7 @@ app.post('/wheelregister', async (req, res) => {
 
 
 // Route des roues de l'utilisateur
-    app.post('/userwheels', async (req, res) => {
+app.post('/userwheels', async (req, res) => {
     const { username } = req.body;
     const wheelsCollection = client.db("test").collection("wheels");
 
