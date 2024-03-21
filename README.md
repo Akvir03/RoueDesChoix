@@ -34,12 +34,14 @@ cd roue-des-choix
 Pour le front-end :
 
 ```bash
+cd roue-des-choix
 npm install
 ```
 
 Pour le back-end :
 
 ```bash
+cd backend
 npm install
 ```
 
@@ -48,11 +50,13 @@ npm install
 Pour démarrer le serveur front-end :
 
 ```bash
+cd roue-des-choix
 npm run start
 ```
 
 Pour le back-end:
 ```bash
+cd backend
 npm run start
 ```
 
