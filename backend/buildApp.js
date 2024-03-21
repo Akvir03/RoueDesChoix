@@ -6,7 +6,6 @@ const faker = require('faker');
 // const Connection = require('./models/connectionModel');
 
 const userController = require('./controllers/userController');
-const restaurantController = require('./controllers/restaurantController');  
 
 require('dotenv').config();
 
@@ -36,19 +35,6 @@ async function createUsers() {
     await userController.createUser(user);
   }
 
-}
-
-async function createRestaurants(NUM_RESTAURANTS) {
-  const restaurants = Array.from({ length: 100 }).map(() => ({
-    name: faker.company.companyName(),
-    cuisine: faker.commerce.productMaterial(),
-    address: faker.address.streetAddress(),
-    approved: true
-  }));
-
-  for(let restaurant of restaurants){
-    await restaurantController.createRestaurantJSON(restaurant);
-  }
 }
 
 
