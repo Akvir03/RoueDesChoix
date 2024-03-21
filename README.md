@@ -33,10 +33,7 @@ cd roue-des-choix
 
 Pour le front-end :
 
-```bash
-cd roue-des-choix
-npm install
-```
+JavaScript / CSS natif
 
 Pour le back-end :
 
@@ -49,10 +46,7 @@ npm install
 
 Pour démarrer le serveur front-end :
 
-```bash
-cd roue-des-choix
-npm run start
-```
+JavaScript / CSS natif
 
 Pour le back-end:
 ```bash
