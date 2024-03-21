@@ -19,7 +19,6 @@ const RestaurantController = {
         name,
         cuisine,
         address,
-        added_by: req.user.id, // Assurez-vous d'avoir une manière d'identifier l'utilisateur, par exemple via l'authentification
       });
       const savedRestaurant = await newRestaurant.save();
       res.status(201).json(savedRestaurant);
@@ -29,13 +28,12 @@ const RestaurantController = {
   },
 
   createRestaurantJSON: async(restaurantData) => {
-    const { name, cuisine, address, added_by, approved } = restaurantData;
+    const { name, cuisine, address, approved } = restaurantData;
     try {
       const newRestaurant = new Restaurant({
         name,
         cuisine,
         address,
-        added_by,
         approved
       });
       const savedRestaurant = await newRestaurant.save();

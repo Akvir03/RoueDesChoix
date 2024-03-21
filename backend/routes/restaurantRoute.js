@@ -5,6 +5,7 @@ const RestaurantController = require('../controllers/restaurantController'); // 
 // Route pour créer un restaurant
 router.post('/create', RestaurantController.createRestaurant);
 
+
 // Route pour obtenir tous les restaurants
 router.get('/getAll', RestaurantController.getAllRestaurants);
 

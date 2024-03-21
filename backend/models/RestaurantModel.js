@@ -23,10 +23,6 @@ const RestaurantSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Review'
   }],
-  added_by: {
-    type: String,
-    required: true
-  },
   approved: {
     type: Boolean,
     default: false

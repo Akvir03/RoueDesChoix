@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/health', healthRoutes);
 app.use('/api/users', userRoutes);
-app.use('/api/themes', restaurantRoutes);
+app.use('/api/restaurants', restaurantRoutes);
 app.use('/api/roue', roueRoutes)
 
 

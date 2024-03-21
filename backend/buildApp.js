@@ -43,7 +43,6 @@ async function createRestaurants(NUM_RESTAURANTS) {
     name: faker.company.companyName(),
     cuisine: faker.commerce.productMaterial(),
     address: faker.address.streetAddress(),
-    added_by: "System",
     approved: true
   }));
 
