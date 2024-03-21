@@ -13,7 +13,7 @@ La Roue des Choix est une application web interactive qui permet aux utilisateur
 
 - **Front-end :** TypeScript, HTML, CSS
 - **Back-end :** Node.Js
-- **Base de donnée :** PostegreSQL
+- **Base de donnée :** MongoDB
 
 ## Prérequis
 
